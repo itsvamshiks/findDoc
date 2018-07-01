@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>findDoc</title>
+
+    <!-- Bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <!-- Main CSS -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+    <link rel="stylesheet" href="../stylesheets/style_sheet.css" type="text/css">
+
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="inner cover">
+                 <div class='row sc-results-header'>
+                   <!--Section Displaying the results-->
+                   <div class="col-sm-4 sc-results-header-item">Physician Name</div>
+                   <div class="col-sm-4 sc-results-header-item">Physician Address</div>
+                 </div>
+                 <%var result_String = JSON.parse(result_data);
+                 for(var i = 0 ;i < result_String.length; i++){ %>
+                 <div class='row sc-results-entry'>
+                     <div class='col-sm-3 sc-results-item'><%= result_String[i]['Physician_First_Name']+ " " + result_String[i]['Physician_Middle_Name']+" "+result_String[i]['Physician_Last_Name']%></div>
+                     <div class='col-sm-3 sc-results-item'><%= result_String[i]['Recipient_Primary_Business_Street_Address_Line1']+", "+result_String[i]['Recipient_Primary_Business_Street_Address_Line2']+", "+result_String[i]['Recipient_City']+", "+result_String[i]['Recipient_State']+", "+ result_String[i]['Recipient_Zip_Code']+", "+result_String[i]['Recipient_Country'] %></div>
+                     <div class='col-sm-1'>
+                         <button type="button" id = "p-<%=result_String[i]['Physician_Profile_ID'] %>" class=".btn-group-sm sc-results-item sf-submit book_button" onclick="onfinalChoose(this.id)" >Look up</button>
+                     </div>
+                 </div>
+                 <script>
+                    //on Button Click function call
+                    function onfinalChoose(profile_id){
+                        var resultURL;
+                        console.log(profile_id);
+                        resultURL = "http://localhost:8081/findPhysicians/map?physician_id=" + profile_id;
+                        location.href = resultURL;
+
+                    }
+
+                 </script>
+
+                 <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

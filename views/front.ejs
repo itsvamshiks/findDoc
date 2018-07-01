@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>findDoc</title>
+
+  <!-- Bootstrap -->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+  <!-- Main CSS -->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+  <link rel="stylesheet" href="../stylesheets/style_sheet.css" type="text/css">
+
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+
+          </div>
+        </div>
+        <!-- Main Content Starts here -->
+        <div class="inner cover">
+          <h1 class="sf-heading">SEARCH FOR PHYSICIAN</h1>
+          <div class="search-physician">
+            <div class="sf-content" id="round">
+              <!--Form for getting physician details-->
+              <form action="#">
+                  <div class="row">
+                  <div class="col-sm-4">
+                    <input type="text" name="first_name" id="first_name" class="physician-details" placeholder="FIRST NAME" required = "true">
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="text" name="middle_name" id="middle_name" class="physician-details" placeholder="MIDDLE NAME">
+                  </div>
+                  <div class="col-sm-4">
+                      <input type="text" name="last_name" id="last_name" class="physician-details" placeholder="LAST NAME">
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm-3" >
+                    <button class="sf-submit" onclick="onFormSubmit()">
+                      Search &nbsp; <i class="glyphicon glyphicon-send"></i>
+                    </button>
+                  </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+          <script>
+              //Function called on button click
+                  function onFormSubmit() {
+                  var validate = true;
+                  console.log("In the function call");
+                  var paramsArr = $('form').serialize().split('&');
+
+                  var doc_fn = paramsArr[0].split('=')[1];
+                  var doc_mn = paramsArr[1].split('=')[1];
+                  var doc_ln = paramsArr[2].split('=')[1];
+                  if(doc_fn == ""){
+                          validate = false;
+                          alert("First Name Required")
+                          location.href = "http://localhost:8081/findPhysicians"
+                  }
+                  if(validate = true) {
+                      var query_param = "first_name=" + doc_fn;
+
+                      if (doc_mn != null) {
+                          query_param = query_param + "&" + "middle_name=" + doc_mn;
+                      }
+                      if (doc_ln != null) {
+                          query_param = query_param + "&" + "last_name=" + doc_ln;
+                      }
+                      query_param = "/findPhysicians/search?" + query_param;
+                      location.href = "http://localhost:8081" + query_param;
+                  }
+                }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
