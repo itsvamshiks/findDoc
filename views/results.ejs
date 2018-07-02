@@ -57,11 +57,17 @@
                      </div>
                  </div>
                  <script>
+
+                     function alertMessage(){
+                         if(result_String.length==0){
+                             alert("No Physician Found");
+                         }
+                     }
                     //on Button Click function call
                     function onfinalChoose(profile_id){
                         var resultURL;
                         console.log(profile_id);
-                        resultURL = "http://localhost:8081/findPhysicians/map?physician_id=" + profile_id;
+                        resultURL = "http://localhost:8080/findPhysicians/map?physician_id=" + profile_id;
                         location.href = resultURL;
 
                     }

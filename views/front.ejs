@@ -51,9 +51,9 @@
         <div class="inner cover">
           <h1 class="sf-heading">SEARCH FOR PHYSICIAN</h1>
           <div class="search-physician">
-            <div class="sf-content" id="round">
+            <div class="sf-content">
               <!--Form for getting physician details-->
-              <form action="#">
+              <form action="/findPhysicians/search" method="get">
                   <div class="row">
                   <div class="col-sm-4">
                     <input type="text" name="first_name" id="first_name" class="physician-details" placeholder="FIRST NAME" required = "true">
@@ -67,9 +67,9 @@
                   </div>
                   <div class="row">
                   <div class="col-sm-3" >
-                    <button class="sf-submit" onclick="onFormSubmit()">
-                      Search &nbsp; <i class="glyphicon glyphicon-send"></i>
-                    </button>
+                    <input value="Search" type = "submit" class="sf-submit" onclick="onFormSubmit()">
+                       &nbsp; <!--i class="glyphicon glyphicon-send"></i-->
+                    </input>
                   </div>
                   </div>
               </form>
@@ -77,32 +77,7 @@
           </div>
           <script>
               //Function called on button click
-                  function onFormSubmit() {
-                  var validate = true;
-                  console.log("In the function call");
-                  var paramsArr = $('form').serialize().split('&');
 
-                  var doc_fn = paramsArr[0].split('=')[1];
-                  var doc_mn = paramsArr[1].split('=')[1];
-                  var doc_ln = paramsArr[2].split('=')[1];
-                  if(doc_fn == ""){
-                          validate = false;
-                          alert("First Name Required")
-                          location.href = "http://localhost:8081/findPhysicians"
-                  }
-                  if(validate = true) {
-                      var query_param = "first_name=" + doc_fn;
-
-                      if (doc_mn != null) {
-                          query_param = query_param + "&" + "middle_name=" + doc_mn;
-                      }
-                      if (doc_ln != null) {
-                          query_param = query_param + "&" + "last_name=" + doc_ln;
-                      }
-                      query_param = "/findPhysicians/search?" + query_param;
-                      location.href = "http://localhost:8081" + query_param;
-                  }
-                }
           </script>
         </div>
       </div>

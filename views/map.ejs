@@ -49,18 +49,21 @@
             </div>
             <!-- Main Content Starts here -->
             <div class="inner cover" align = "center">
-                <div class='row sc-results-header' align = center>
-                    <div class="sc-results-header-item" align="center">Physician Location</div>
-                    </div>
+                <div class='row sc-results-header'>
+                    <div class="col-sm-4 sc-results-header-item" align="center">Physician Location </div>
+                </div>
                 <div id="map" align="center" style="width:500px; height:500px;" >
 
                 </div>
                 <script>
+                    var physicianPoint = JSON.parse(doctor);
+                    var latitude = physicianPoint[0]['lat'];
+                    var longitude = physicianPoint[0]['long'];
+
                     function initMap() {
-                        var docLatitude ;//= JSON.parse(doc_latitude);
-                        var docLongitude ;//= JSON.parse(doc_longitude);
-                        var docName ;//= JSON.parse(doc_name);
-                        var myLatLng = {lat: docLatitude, lng: docLongitude};
+
+
+                        var myLatLng = {lat: parseFloat(latitude)/*physicianPoint[0]['lat']*/, lng: parseFloat(longitude)/*physicianPoint[0]['long']*/};
 
 
                         // Create a map object and specify the DOM element
@@ -74,18 +77,17 @@
                         var marker = new google.maps.Marker({
                             map: map,
                             position: myLatLng,
-                            title: docName
+                            title: physicianPoint[0]['name']
                         });
                     }
 
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA64HLONhPN-y2EDqdFYWlTX1fvQlis0xU&callback=initMap"
-                        async defer>
-                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi3wESzegDcUS8G0odNaK9tyevBhE2t5Q&callback=initMap"
+                        async defer></script>
 
+            </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

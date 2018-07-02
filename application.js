@@ -11,7 +11,7 @@ var map_Physician = require('./routers/map_physician.js');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-var application = app.listen(8081, function () {
+var application = app.listen(8080, function () {
     var host = application.address().address
     var port = application.address().port
     console.log("Visit findPhysicians application at http://%s:%s", host, port);

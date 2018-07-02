@@ -29,7 +29,6 @@ function fetchData(req,res,callback){
 
 module.exports = {
     "MongoURL": 'mongodb://vamshi:Vam*7573@ds217351.mlab.com:17351/cmsphysicians',
-    "fetchData": fetchData
-
-
+    "fetchData": fetchData,
+    "physicianData":physicianData
 };
