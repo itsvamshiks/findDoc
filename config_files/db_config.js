@@ -15,20 +15,12 @@ var physicianDataSchema = new schema({
     Recipient_Zip_Code : Number,
     Recipient_Country : String
 },{collection : 'physicians'});//end of physicianDataSchema;
+
 var physicianData = mongoose.model('physicianData',physicianDataSchema);
-
-function fetchData(req,res,callback){
-    physicianData.find({'Physician_First_Name':"SERGIO"})
-        .then(function (doc) {
-            callback(doc);
-        })//end of then;
-
-}//end of fetchData
 
 
 
 module.exports = {
     "MongoURL": 'mongodb://vamshi:Vam*7573@ds217351.mlab.com:17351/cmsphysicians',
-    "fetchData": fetchData,
     "physicianData":physicianData
 };

@@ -1,4 +1,4 @@
-var dbconf = require('../config_files/db_conf.js')
+var dbconf = require('../config_files/db_config.js')
 var express = require('express');
 var mongoose = require('mongoose');
 mongoose.connect(dbconf.MongoURL);

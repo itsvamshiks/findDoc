@@ -10,7 +10,8 @@ var search_req = require('./routers/search_request.js');
 var map_Physician = require('./routers/map_physician.js');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 var application = app.listen(8080, function () {
     var host = application.address().address
     var port = application.address().port
