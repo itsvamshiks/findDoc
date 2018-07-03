@@ -51,11 +51,11 @@
             <!-- Main Content Starts here -->
             <div class="inner cover" align = "center">
                 <div class='row sc-results-header' align="center">
-                    <div class="col-sm-15 sc-results-header-item" align="center">Physician Location</div>
+                    <div class="col-sm-15 sc-results-header-item" align="center">Physician Location : <%=daddress%></div>
                 </div>
                 <!--Div for Map frame-->
                 <div id="mapBox" align="center" >
-                    <iframe src="https://embed.waze.com/iframe?zoom=20&lat=<%=dlatitude%>&lon=<%=dlongitude%>&pin=1"
+                    <iframe src="https://embed.waze.com/iframe?zoom=20&lat=<%=dlatitude%>&lon=<%=dlongitude%>&pin=1&desc=<%=dname%>: <%=daddress%>"
                             width="500" height="500"></iframe>
 
                 </div>

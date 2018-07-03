@@ -3,8 +3,7 @@
 ## Aim:
 To build a web application using Node.js and MongoDB, to search for physicians listed in the CMS dataset using their names.
 
-Then show the location of the physician on the Map
-For more details [refer here](https://www.csee.umbc.edu/~kalpakis/Courses/621-sp18/project/prj3.php)
+Then show the location of the physician on the Map.
 
 ## Prerequisites:
 - Node.js
@@ -14,11 +13,19 @@ For more details [refer here](https://www.csee.umbc.edu/~kalpakis/Courses/621-sp
      MongoDB package
      Axios package
 
+##Repository link
+
+The Repository can be found here:
+
+https://bitbucket.org/itsvamshiks/finddoc/src/master/
+
+
 ##Tools Used
--Front-End - EJS, CSS, Bootstrap
--Middleware - Node.js,Express.js
--Backend - MongoDB instance in mLab (Cloud platform for MongoDB)
--Version Control - Bitbucket
+- Front-End - EJS, CSS, Bootstrap
+- Middleware - Node.js,Express.js
+- Backend - MongoDB instance in mLab (Cloud platform for MongoDB)
+- Version Control - Bitbucket
+
 
 ## How to execute:
 - Run the Application.js file

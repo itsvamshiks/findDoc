@@ -41,6 +41,7 @@
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="cover-container">
+
             <div class="inner cover">
                  <div class='row sc-results-header'>
                    <!--Section Displaying the results-->
@@ -48,6 +49,7 @@
                    <div class="col-sm-4 sc-results-header-item">Physician Address</div>
                  </div>
                  <%var result_String = JSON.parse(result_data);
+                 if(result_String.length>0){
                  for(var i = 0 ;i < result_String.length; i++){ %>
                  <div class='row sc-results-entry'>
                      <div class='col-sm-3 sc-results-item'><%= result_String[i]['Physician_First_Name']+ " " + result_String[i]['Physician_Middle_Name']+" "+result_String[i]['Physician_Last_Name']%></div>
@@ -75,7 +77,14 @@
 
                  </script>
 
-                 <%}%>
+                 <%}}
+                 else{%>
+                <div class='row sc-results-entry'>
+                    <div class='col-sm-15 sc-results-item' align="center">No Physicians Found</div>
+                </div>
+
+
+                <%}%>
             </div>
         </div>
     </div>

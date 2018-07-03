@@ -35,6 +35,7 @@ body{
 
 .masthead-brand img{
   width: 100%;
+  margin: auto;
 }
 
 .masthead-nav > li {

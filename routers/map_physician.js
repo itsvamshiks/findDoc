@@ -34,19 +34,13 @@ router.get('/',function(req,res) {
 
     fetchData(profile_id,function (result) {
         console.log(result);
-        var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1']+","+result[0]['Recipient_Primary_Business_Street_Address_Line2']+","+result[0]['Recipient_City']+","+result[0]['Recipient_State']+","+ result[0]['Recipient_Zip_Code']+","+result[0]['Recipient_Country']
+        var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1']+" "+result[0]['Recipient_Primary_Business_Street_Address_Line2']+","+result[0]['Recipient_City']+","+result[0]['Recipient_State']+","+ result[0]['Recipient_Zip_Code']+","+result[0]['Recipient_Country']
         resAddress = JSON.stringify(resAddress);
         var doc_name= result[0]['Physician_First_Name']+ " " + result[0]['Physician_Middle_Name']+" "+result[0]['Physician_Last_Name'];
-        //doc_name = JSON.stringify(doc_name);
         console.log("DOCNAME"+typeof(doc_name));
         geocode(resAddress,function(response) {
 
-           var jsonData = [{}];
-           jsonData[0]['name'] = doc_name;
-           jsonData[0]['lat'] = response.data.results[0].geometry.location.lat;
-           jsonData[0]['long'] = response.data.results[0].geometry.location.lng;
-           var jsonString = JSON.stringify(jsonData);
-           res.render('map',{dlatitude:response.data.results[0].geometry.location.lat, dlongitude: response.data.results[0].geometry.location.lng});
+           res.render('map',{daddress:resAddress,dname:doc_name,dlatitude:response.data.results[0].geometry.location.lat, dlongitude: response.data.results[0].geometry.location.lng});
 
         })//end of geocode function callback
 
