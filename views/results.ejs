@@ -70,7 +70,7 @@
                     function onfinalChoose(profile_id){
                         var resultURL;
                         console.log(profile_id);
-                        resultURL = "http://localhost:8080/findPhysicians/map?physician_id=" + profile_id;
+                        resultURL = "http://ec2-18-222-150-25.us-east-2.compute.amazonaws.com:8080/findDoc/map?physician_id=" + profile_id;
                         location.href = resultURL;
 
                     }

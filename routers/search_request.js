@@ -2,7 +2,15 @@ var dbconf = require('../config_files/db_config.js')
 var express = require('express');
 var mongoose = require('mongoose');
 mongoose.connect(dbconf.MongoURL);
+var http = require("http");
 var router = express.Router();
+
+
+
+setInterval(function() {
+    http.get("http://finddocs.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
+
 
 //middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
@@ -15,13 +23,15 @@ function onFormSubmit(req,callback) {
     var validate = true;
     console.log("In the function call");
 
-    var doc_fn = req.query['first_name'];
-    var doc_mn = req.query['middle_name'];
-    var doc_ln = req.query['last_name'];
+    var doc_fn = req.query['first_name'].toUpperCase();
+    var doc_mn = req.query['middle_name'].toUpperCase();
+    var doc_ln = req.query['last_name'].toUpperCase();
+    var alphabet =/^[a-zA-Z]+$/;
+
     if(doc_fn == ""){
         validate = false;
-        alert("First Name Required")
-        location.href = "http://localhost:8080/findPhysicians"
+        alert("First Name Required");
+        location.href = "http://localhost:8080/findDoc"
     }
     if(validate = true) {
         callback(doc_fn,doc_mn,doc_ln);

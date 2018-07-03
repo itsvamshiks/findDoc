@@ -53,16 +53,16 @@
           <div class="search-physician">
             <div class="sf-content">
               <!--Form for getting physician details-->
-              <form action="/findPhysicians/search" method="get">
+              <form action="/findDoc/search" method="get">
                   <div class="row">
                   <div class="col-sm-4">
-                    <input type="text" name="first_name" id="first_name" class="physician-details" placeholder="FIRST NAME" required = "true">
+                    <input type="text" name="first_name" id="first_name" class="physician-details" placeholder="FIRST NAME" pattern="[A-Za-z]+" required = "true">
                   </div>
                   <div class="col-sm-4">
-                    <input type="text" name="middle_name" id="middle_name" class="physician-details" placeholder="MIDDLE NAME">
+                    <input type="text" name="middle_name" id="middle_name" class="physician-details" pattern="[A-Za-z]*" placeholder="MIDDLE NAME">
                   </div>
                   <div class="col-sm-4">
-                      <input type="text" name="last_name" id="last_name" class="physician-details" placeholder="LAST NAME">
+                      <input type="text" name="last_name" id="last_name" class="physician-details" pattern="[A-Za-z]*" placeholder="LAST NAME">
                   </div>
                   </div>
                   <div class="row">
@@ -75,10 +75,6 @@
               </form>
             </div>
           </div>
-          <script>
-              //Function called on button click
-
-          </script>
         </div>
       </div>
     </div>
