@@ -14,7 +14,7 @@ var physicianDataSchema = new schema({
     Recipient_State : String,
     Recipient_Zip_Code : Number,
     Recipient_Country : String
-},{collection : 'physicianCollection'});//end of physicianDataSchema;
+},{collection : 'physicianDataComplete'});//end of physicianDataSchema;
 
 var physicianData = mongoose.model('physicianData',physicianDataSchema);
 
