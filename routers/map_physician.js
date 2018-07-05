@@ -34,7 +34,7 @@ router.get('/',function(req,res) {
 
     fetchData(profile_id,function (result) {
         console.log(result);
-        if(result[0]['Recipient_State']!=null) {
+        if(result[0]['Recipient_State']!=undefined) {
             var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1'] + " " + result[0]['Recipient_Primary_Business_Street_Address_Line2'] + "," + result[0]['Recipient_City'] + "," + result[0]['Recipient_State'] + "," + result[0]['Recipient_Zip_Code'] + "," + result[0]['Recipient_Country']
         }else {
             var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1'] + " " + result[0]['Recipient_Primary_Business_Street_Address_Line2'] + "," + result[0]['Recipient_City'] + "," + result[0]['Recipient_State'] + "," + result[0]['Recipient_Country']
