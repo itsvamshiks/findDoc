@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6505b598-127e-4e6e-8c33-afb557ea4d12" name="Default" comment="" />
+    <list default="true" id="6505b598-127e-4e6e-8c33-afb557ea4d12" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/views/results.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/results.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -50,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="results.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/results.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="252">
+              <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -62,26 +64,8 @@
       <file leaf-file-name="front.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/front.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Readme.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_files/db_config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="120">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -187,14 +171,14 @@
         <option value="$PROJECT_DIR$/config_files/db_conf.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/style_sheet.css" />
         <option value="$PROJECT_DIR$/views/map.ejs" />
-        <option value="$PROJECT_DIR$/views/front.ejs" />
-        <option value="$PROJECT_DIR$/views/front.ejs" />
         <option value="$PROJECT_DIR$/config_files/db_config.js" />
         <option value="$PROJECT_DIR$/routers/map_physician.js" />
         <option value="$PROJECT_DIR$/routers/map_physician.js" />
-        <option value="$PROJECT_DIR$/views/results.ejs" />
-        <option value="$PROJECT_DIR$/views/results.ejs" />
         <option value="$PROJECT_DIR$/Readme.md" />
+        <option value="$PROJECT_DIR$/views/front.ejs" />
+        <option value="$PROJECT_DIR$/views/front.ejs" />
+        <option value="$PROJECT_DIR$/views/results.ejs" />
+        <option value="$PROJECT_DIR$/views/results.ejs" />
       </list>
     </option>
   </component>
@@ -312,7 +296,7 @@
       <workItem from="1530325177123" duration="8648000" />
       <workItem from="1530395757147" duration="13160000" />
       <workItem from="1530468146687" duration="37218000" />
-      <workItem from="1530776306015" duration="2833000" />
+      <workItem from="1530776306015" duration="3622000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed the JSON.parse error in map.ejs">
       <created>1530553449642</created>
@@ -325,7 +309,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206955000" />
+    <option name="totallyTimeSpent" value="207744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,20 +426,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/frontend.js" />
-    <entry file="file://$PROJECT_DIR$/views/front.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style_sheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/map.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -477,6 +447,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/front.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style_sheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routers/map_physician.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -486,15 +477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/results.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="252">
+          <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
         </state>
       </provider>
     </entry>
