@@ -34,13 +34,28 @@ router.get('/',function(req,res) {
 
     fetchData(profile_id,function (result) {
         console.log(result);
-        if(result[0]['Recipient_State']!=undefined) {
-            var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1'] + " " + result[0]['Recipient_Primary_Business_Street_Address_Line2'] + "," + result[0]['Recipient_City'] + "," + result[0]['Recipient_State'] + "," + result[0]['Recipient_Zip_Code'] + "," + result[0]['Recipient_Country']
-        }else {
-            var resAddress = result[0]['Recipient_Primary_Business_Street_Address_Line1'] + " " + result[0]['Recipient_Primary_Business_Street_Address_Line2'] + "," + result[0]['Recipient_City'] + "," + result[0]['Recipient_State'] + "," + result[0]['Recipient_Country']
+        var resAddress = "";
+        if(result[0]['Recipient_Primary_Business_Street_Address_Line1']!=""){
+            resAddress = resAddress + result[0]['Recipient_Primary_Business_Street_Address_Line1'] + ",";
+        }
+        if(result[0]['Recipient_Primary_Business_Street_Address_Line2']!=""){
+            resAddress =resAddress + result[0]['Recipient_Primary_Business_Street_Address_Line2'] + ",";
+        }
+        if(result[0]['Recipient_City']!=""){
+            resAddress = resAddress + result[0]['Recipient_City'] + ",";
+        }
+        if(result[0]['Recipient_State']!=""){
+            resAddress = resAddress + result[0]['Recipient_State'] + ",";
+        }
+        if(result[0]['Recipient_Zip_Code']!=""){
+            resAddress = resAddress + result[0]['Recipient_Zip_Code'] + ",";
+        }
+        if(result[0]['Recipient_Country']!=""){
+            resAddress = resAddress + result[0]['Recipient_Country'];
         }
 
         resAddress = JSON.stringify(resAddress);
+        console.log("RESADDRESS" + resAddress);
         var doc_name= result[0]['Physician_First_Name']+ " " + result[0]['Physician_Middle_Name']+" "+result[0]['Physician_Last_Name'];
         console.log("DOCNAME"+typeof(doc_name));
         geocode(resAddress,function(response) {
