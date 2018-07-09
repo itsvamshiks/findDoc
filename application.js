@@ -1,8 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var session  = require('express-session');
-var cookieParser = require('cookie-parser')
 var flash    = require('connect-flash');
 var cors = require('cors');
 var app = express();
@@ -19,11 +17,9 @@ var application = app.listen(process.env.PORT || 8080, function () {
 });
 app.use(express.static('public'));
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-app.use(cookieParser());
 app.use(cors());
 app.use(urlencodedParser);
 app.use(bodyParser.json());
-app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
 app.use(flash());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/findDoc/search',search_req);
