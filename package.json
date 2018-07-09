@@ -1,14 +1,14 @@
 {
-  "name": "skyline",
+  "name": "findDoc",
   "version": "1.0.0",
-  "description": "This project helps to book tickets for AirLine Reservation System",
-  "main": "index.js",
+  "description": "This project helps to search for physicians and lookup their locations on the map",
+  "main": "application.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "skyline",
-    "reservation",
+    "findDoc",
+    "Physicians",
     "database",
     "online"
   ],
