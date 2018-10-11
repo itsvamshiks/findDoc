@@ -22,9 +22,9 @@ https://bitbucket.org/itsvamshiks/finddoc/src/master/
 
 ##Tools Used
 - Front-End - EJS, CSS, Bootstrap
-- Middleware - Node.js,Express.js
+- Middleware - Express.js
 - Backend - MongoDB instance in mLab (Cloud platform for MongoDB)
-- Version Control - Bitbucket
+- Version Control - Git
 
 
 ## How to execute:
